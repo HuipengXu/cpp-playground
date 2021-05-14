@@ -47,16 +47,25 @@ decltype(printVector) *f2(int a) {
     return printVector;
 }
 
+int sum(int a, int b) {
+    return a + b;
+}
+
 using pf = void (*) (vector<int>);
 int main() {
     vector<int> a(3, 4);
-    auto ff = f(4);
-    ff(a);
-    pf fff = f1(5);
-    fff(a);
-    void (*ffff)(vector<int>) = f1(6);
-    ffff(a);
-    void (*fffff)(vector<int>) = f2(6);
-    fffff(a);
+//    auto ff = f(4);
+//    ff(a);
+//    pf fff = f1(5);
+//    fff(a);
+//    void (*ffff)(vector<int>) = f1(6);
+//    ffff(a);
+//    void (*fffff)(vector<int>) = f2(6);
+//    fffff(a);
+
+    vector<int (*) (int, int)> arrayPf(3, sum);
+    for (auto pfi: arrayPf) {
+        cout << pfi(4, 5) << endl;
+    }
     return 0;
 };
