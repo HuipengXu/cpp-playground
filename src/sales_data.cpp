@@ -18,7 +18,7 @@ double SaleData::avgPrice() const {
     }
 }
 
-SaleData SaleData::add(const SaleData &lhs, const SaleData &rhs) {
+SaleData add(const SaleData &lhs, const SaleData &rhs) {
 //    SaleData sum = lhs;
 //    sum.combine(rhs);
 //    return sum;

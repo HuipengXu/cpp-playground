@@ -3,7 +3,8 @@
 //
 
 #include <iostream>
-#include "sales_data.h"
+#include "Screen.h"
+#include "window_mgr.h"
 
 using namespace std;
 
@@ -11,13 +12,12 @@ using namespace std;
 
 
 int main() {
-    SaleData ds1;
-    print(cout, ds1) << endl;
-    SaleData ds2("hello class");
-    print(cout, ds2) << endl;
-    SaleData ds3("hello class1", 5.0, 4);
-    print(cout, ds3) << endl;
-    SaleData ds4(cin);
-    print(cout, ds4) << endl;
+    Screen::pos a = 6;
+    Screen::pos b = 5;
+    Screen myScreen(a, b, 'X');
+    myScreen.move(a, b).set('#').display(cout);
+    cout << "\n";
+    myScreen.display(cout);
+    cout << "\n";
     return 0;
 }
