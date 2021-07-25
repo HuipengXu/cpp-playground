@@ -33,3 +33,13 @@ inline Screen &Screen::set(pos r, pos col, char c) {
 Screen::pos Screen::size() const {
     return height * width;
 }
+
+Screen::pos verify(Screen::pos ht) {
+    return ht < 100? ht : 100;
+}
+
+void Screen::setHeight(pos ht) {
+    height = verify(ht);
+    return;
+}
+

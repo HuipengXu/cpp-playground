@@ -10,7 +10,6 @@
 
 using namespace std;
 
-
 class Screen {
     friend class window_mgr;  // 不需要 include 其头文件
 
@@ -47,12 +46,19 @@ public:
 
     pos size() const;
 
+    void setHeight(pos);
+
+    pos getHeight() {
+        return height;
+    }
+
 private:
     Screen *j;
     pos cursor = 0;
     pos height = 0, width = 0;
     string contents;
     mutable size_t access_ctr;
+    const int test = 5;
 
     void do_display(ostream &os) const {
         os << contents;
